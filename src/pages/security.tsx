@@ -24,7 +24,7 @@ const securityFeatures = [
     {
         title: 'No Middlemen, No Surveillance',
         description:
-            'AlphaVault is 100% decentralized. No third parties. No hidden data collection. You own and control everything.',
+            'AlphaVault is 100% decentralized. No third parties. No hidden data collection. You own and control everything',
     },
 ];
 

@@ -9,11 +9,18 @@ interface ModernSidebarProps {
   onSectionChange: (section: string) => void;
 }
 
-export const ModernSidebar: React.FC<ModernSidebarProps> = ({ 
-  activeSection, 
-  onSectionChange 
+export const ModernSidebar: React.FC<ModernSidebarProps> = ({
+  activeSection,
+  onSectionChange
 }) => {
   const menuItems = [
+    {
+      id: 'files',
+      label: 'File Uploads',
+      icon: Shield, // You can replace with a more relevant icon like FileUp or UploadCloud
+      description: 'Store encrypted files',
+      badge: 'Alpha'
+    },
     {
       id: 'seeds',
       label: 'Seed Phrases',
@@ -34,8 +41,16 @@ export const ModernSidebar: React.FC<ModernSidebarProps> = ({
       icon: Coins,
       description: 'Portfolio tracking',
       badge: 'Live'
+    },
+    {
+      id: 'comingsoon',
+      label: 'More Coming Soon',
+      icon: Settings,
+      description: 'New features in development',
+      badge: 'Soon'
     }
   ];
+
 
   return (
     <aside className="w-64 border-r bg-card">
@@ -64,14 +79,13 @@ export const ModernSidebar: React.FC<ModernSidebarProps> = ({
             {menuItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
-              
+
               return (
                 <Button
                   key={item.id}
                   variant={isActive ? "secondary" : "ghost"}
-                  className={`w-full justify-start h-auto p-3 ${
-                    isActive ? 'bg-primary/10 text-primary border border-primary/20' : ''
-                  }`}
+                  className={`w-full justify-start h-auto p-3 ${isActive ? 'bg-primary/10 text-primary border border-primary/20' : ''
+                    }`}
                   onClick={() => onSectionChange(item.id)}
                 >
                   <div className="flex items-center space-x-3 w-full">

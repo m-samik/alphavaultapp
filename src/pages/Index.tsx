@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletProviderWrapper } from '@/components/WalletProvider';
+import { Fileupload } from '@/components/Fileupload';
+import Comingsoon from '@/components/Comingsoon';
 import { ModernHeader } from '@/components/ModernHeader';
 import { ModernSidebar } from '@/components/ModernSidebar';
 import { ModernWelcome } from '@/components/ModernWelcome';
@@ -10,6 +12,7 @@ import { TokenAllocations } from '@/components/TokenAllocations';
 import { Connection, PublicKey } from '@solana/web3.js';
 import { getAssociatedTokenAddress, getAccount } from '@solana/spl-token';
 import { Button } from '@/components/ui/button';
+
 
 
 const TOKEN_MINT_ADDRESS = new PublicKey('AhBxUsbkoRW1hPpX7eNGtHFLxRnC7y7XZAcBNuY2bonk');
@@ -50,14 +53,18 @@ const VaultContent = () => {
 
   const renderSection = () => {
     switch (activeSection) {
+      case 'files':
+        return <Fileupload />;
       case 'seeds':
         return <ModernSeedPhraseManager />;
       case 'wallets':
         return <WalletMetadata />;
       case 'tokens':
         return <TokenAllocations />;
+      case 'comingsoon':
+        return <Comingsoon />;
       default:
-        return <ModernSeedPhraseManager />;
+        return <Fileupload />;
     }
   };
 
@@ -116,10 +123,13 @@ const VaultContent = () => {
         />
         <main className="flex-1 p-6">
           {renderSection()}
+          <div className="pt-10 text-xs text-vault-gray-light opacity-50 font-mono text-center">
+            Made with ❤️ on Solana — Powered by $AV
+          </div>
         </main>
 
       </div>
-      <footer className="w-full text-center py-6 text-sm text-gray-500">
+      {/* <footer className="w-full text-center py-6 text-sm text-gray-500">
         <p>
           🔓 We’re open source —{' '}
           <a
@@ -131,7 +141,9 @@ const VaultContent = () => {
             view our code on GitHub
           </a>
         </p>
-      </footer>
+      </footer> */}
+
+
 
     </div>
 
