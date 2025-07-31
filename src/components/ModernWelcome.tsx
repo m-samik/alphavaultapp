@@ -3,7 +3,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import LogoAlphaVault from '@/components/logo_alphavault.svg';
-import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import { useCallback } from 'react';
 
