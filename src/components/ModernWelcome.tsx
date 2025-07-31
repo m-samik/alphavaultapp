@@ -7,7 +7,7 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 export const ModernWelcome = () => {
   const [copied, setCopied] = useState(false);
-  const contractAddress = 'XXXXXXXXXXXXXXXXXXXXXXSXXXXXXXXX';
+  const contractAddress = 'Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(contractAddress);

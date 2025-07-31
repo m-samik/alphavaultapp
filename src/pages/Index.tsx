@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/button';
 
 
 
-const TOKEN_MINT_ADDRESS = new PublicKey('AhBxUsbkoRW1hPpX7eNGtHFLxRnC7y7XZAcBNuY2bonk');
+const TOKEN_MINT_ADDRESS = new PublicKey('Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk');
 const MIN_REQUIRED_TOKENS = 40000;
 const TOKEN_DECIMALS = 9; // Adjust if different
 
@@ -105,7 +105,7 @@ const VaultContent = () => {
 
           {/* Buy Button */}
           <a
-            href="https://axiom.trade/meme/"
+            href="https://axiom.trade/meme/Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
