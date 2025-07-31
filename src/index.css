@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Web3 Design System - All colors MUST be HSL */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Modern Web3 Color Palette */
+    --neutral-50: 210 20% 98%;
+    --neutral-100: 210 17% 95%;
+    --neutral-200: 210 16% 90%;
+    --neutral-300: 210 14% 83%;
+    --neutral-400: 210 14% 64%;
+    --neutral-500: 210 11% 45%;
+    --neutral-600: 210 12% 35%;
+    --neutral-700: 210 15% 26%;
+    --neutral-800: 210 17% 17%;
+    --neutral-900: 210 24% 10%;
+    
+    /* Brand Colors */
+    --purple-400: 270 91% 65%;
+    --purple-500: 270 91% 55%;
+    --purple-600: 270 91% 45%;
+    --blue-400: 210 100% 70%;
+    --blue-500: 210 100% 60%;
+    --blue-600: 210 100% 50%;
+    --green-400: 142 71% 65%;
+    --green-500: 142 71% 55%;
+    --green-600: 142 71% 45%;
+    --red-500: 0 84% 60%;
+    --orange-500: 25 95% 53%;
+    
+    /* Design System */
+    --background: var(--neutral-50);
+    --foreground: var(--neutral-900);
+    
+    --card: 0 0% 100%;
+    --card-foreground: var(--neutral-900);
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--neutral-900);
+    
+    --primary: var(--purple-500);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--neutral-100);
+    --secondary-foreground: var(--neutral-900);
+    
+    --muted: var(--neutral-100);
+    --muted-foreground: var(--neutral-500);
+    
+    --accent: var(--blue-500);
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: var(--red-500);
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: var(--neutral-200);
+    --input: 0 0% 100%;
+    --ring: var(--purple-500);
+    
+    --radius: 0.75rem;
+    
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--purple-500)) 0%, hsl(var(--blue-500)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--blue-400)) 0%, hsl(var(--purple-400)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--purple-600)) 0%, hsl(var(--blue-600)) 50%, hsl(var(--purple-500)) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+  }
+
+  .dark {
+    --background: var(--neutral-900);
+    --foreground: var(--neutral-50);
+    
+    --card: var(--neutral-800);
+    --card-foreground: var(--neutral-50);
+    
+    --popover: var(--neutral-800);
+    --popover-foreground: var(--neutral-50);
+    
+    --primary: var(--purple-400);
+    --primary-foreground: var(--neutral-900);
+    
+    --secondary: var(--neutral-800);
+    --secondary-foreground: var(--neutral-50);
+    
+    --muted: var(--neutral-800);
+    --muted-foreground: var(--neutral-400);
+    
+    --accent: var(--blue-400);
+    --accent-foreground: var(--neutral-900);
+    
+    --destructive: var(--red-500);
+    --destructive-foreground: var(--neutral-50);
+    
+    --border: var(--neutral-700);
+    --input: var(--neutral-800);
+    --ring: var(--purple-400);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: var(--gradient-hero);
+  }
+  
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+  
+  .web3-shadow {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .web3-shadow-xl {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
