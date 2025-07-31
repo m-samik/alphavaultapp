@@ -1,10 +1,20 @@
-import { Shield, Zap } from 'lucide-react';
+import { Shield, Zap, Copy } from 'lucide-react';
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import LogoAlphaVault from '@/components/logo_alphavault.svg';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 export const ModernWelcome = () => {
+  const [copied, setCopied] = useState(false);
+  const contractAddress = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(contractAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
       <div className="max-w-5xl w-full">
@@ -26,16 +36,35 @@ export const ModernWelcome = () => {
             Secure. Decentralized. Private.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-2">
-            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              Zero-Knowledge • Client-Side Encryption
-            </Badge>
-            <Badge variant="outline" className="bg-primary/20 text-primary border-primary">
-              CA to be posted
-            </Badge>
-            <Badge variant="outline" className="bg-yellow-100 border-purple-500 text-black">
-              Built on Solana ⚡
-            </Badge>
+          <div className="flex flex-col items-center justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-2">
+              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                Zero-Knowledge • Client-Side Encryption
+              </Badge>
+              <Badge variant="outline" className="bg-yellow-100 border-purple-500 text-black border-yellow-100">
+                Built on Solana ⚡
+              </Badge>
+            </div>
+
+            {/* Animated Gradient CA Box */}
+            <div className="relative mt-2 flex flex-col items-center">
+              <div className="inline-flex items-center px-4 py-[6px] rounded-full text-white font-mono text-sm border border-white/20 shadow-md animate-gradient bg-gradient-to-r from-purple-600 via-green-400 to-purple-500">
+                <span className="mr-2 font-semibold">CA :</span>
+                <span className="mr-3">{contractAddress}</span>
+                <button
+                  onClick={handleCopy}
+                  className="bg-white text-purple-700 p-1.5 rounded-full hover:bg-purple-200 transition-all"
+                  title="Copy CA"
+                >
+                  <Copy className="w-4 h-4" />
+                </button>
+              </div>
+              {copied && (
+                <span className="absolute -bottom-6 text-xs text-green-400 font-medium">
+                  Copied!
+                </span>
+              )}
+            </div>
           </div>
         </div>
 

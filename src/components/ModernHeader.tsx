@@ -39,7 +39,7 @@ export const ModernHeader = () => {
             Security
           </a>
           <a href="/whitepaper_alphavault.pdf" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-            Whitepapar
+            Whitepaper
           </a>
         </nav>
 
