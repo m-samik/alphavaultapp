@@ -20,7 +20,7 @@ const MIN_REQUIRED_TOKENS = 40000;
 const TOKEN_DECIMALS = 9; // Adjust if different
 
 const VaultContent = () => {
-  const [activeSection, setActiveSection] = useState('seeds');
+  const [activeSection, setActiveSection] = useState('files');
   const [hasAccess, setHasAccess] = useState(false);
   const [checkingAccess, setCheckingAccess] = useState(true);
 
@@ -87,25 +87,48 @@ const VaultContent = () => {
 
   if (!hasAccess) {
     return (
-      <div className="flex flex-col items-center min-h-screen text-center px-6 animate-fade-in">
-        <ModernHeader />
-        <div className="mt-16 max-w-2xl border border-vault-green/30 rounded-xl shadow-[0_0_25px_#00ff9533] p-8">
-          <h2 className="text-5xl font-orbitron font-bold text-vault-green mb-6 animate-bounce">
-            Access Denied 🚫
+      <div className="flex flex-col items-center min-h-screen text-center px-6 animate-fade-in">  
+            <ModernHeader />
+
+        <div className="mt-20 max-w-2xl w-full bg-white/5 border border-vault-green/30 backdrop-blur-md rounded-3xl shadow-[0_0_35px_#00ff9580] p-8 sm:p-10 space-y-6 transition-all">
+          {/* Header */}
+          <h2 className="text-4xl sm:text-5xl font-orbitron font-bold text-vault-green tracking-tight animate-pulse">
+            Access Denied <span className="ml-2 text-red-500">🚫</span>
           </h2>
-          <p className="text-vault-gray-light font-mono text-base leading-relaxed mb-8 animate-fade-in-up">
-            This app is exclusively available to $AV holders. To unlock its full functionality,
-            you must hold at least <strong>1M $AV</strong> tokens . <br />
+
+          {/* Message */}
+          <p className="text-vault-gray-light text-sm sm:text-base font-mono leading-relaxed animate-fade-in-up">
+            This app is exclusively available to <span className="font-bold">$AV</span> holders.
+            <br className="hidden sm:block" />
+            To unlock full functionality, you must hold at least <strong>1M $AV</strong> tokens.
           </p>
-          <a href="https://raydium.io/swap" target="_blank" rel="noopener noreferrer">
-            <Button variant="web3" className="text-lg px-6 py-3 animate-pulse shadow-vault-green shadow-md">
-              Buy $AV Token
+
+          {/* Buy Button */}
+          <a
+            href="https://axiom.trade/meme/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <Button
+              variant="web3"
+              className="text-lg px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-200 animate-glow"
+            >
+              🚀 Buy $AV Token Now
             </Button>
           </a>
+
+          {/* Extra Info */}
+          <p className="text-xs text-muted-foreground mt-2 font-mono italic">
+            Holding $AV grants you full access to private, secure vault features.
+          </p>
         </div>
+
+        {/* Footer */}
         <div className="absolute bottom-6 text-xs text-vault-gray-light font-mono opacity-60 animate-fade-in-up">
-          Powered by Solana ✦ Vault Protocol
+          Made with ❤️ on Solana — Powered by $AV
         </div>
+
       </div>
     );
   }

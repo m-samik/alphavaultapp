@@ -90,9 +90,9 @@ export const ModernWelcome = () => {
                 Key Features
               </h3>
               <ul className="space-y-2 text-xs sm:text-base text-muted-foreground">
+                <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3" />File uploads & encryption</li>
                 <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3" />Secure seed phrase storage</li>
                 <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3" />Wallet metadata manager</li>
-                <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3" />File uploads & encryption</li>
                 <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3" />Token allocations</li>
                 <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3" />$AV token integration</li>
               </ul>

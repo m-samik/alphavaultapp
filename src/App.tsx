@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Features from "./pages/features";
 import Security from "./pages/security";
+import { WalletProviderWrapper } from '@/components/WalletProvider';
+
 
 const queryClient = new QueryClient();
 
@@ -15,6 +17,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <WalletProviderWrapper>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -26,6 +29,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </WalletProviderWrapper>
     </TooltipProvider>
   </QueryClientProvider>
 );
