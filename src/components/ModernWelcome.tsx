@@ -11,7 +11,7 @@ export const ModernWelcome = () => {
       <div className="max-w-5xl w-full">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
-            <div className="relative animate-pulse drop-shadow-[0_0_20px_#00ff95]">
+            <div className="relative animate-bounce">
               <img
                 src={LogoAlphaVault}
                 alt="AlphaVault Logo"
@@ -35,7 +35,7 @@ export const ModernWelcome = () => {
             <Badge variant="outline" className="bg-primary/20 text-primary border-primary">
               CA to be posted
             </Badge>
-            <Badge variant="outline" className="bg-purple-900/30 border-purple-500 text-purple-200">
+            <Badge variant="outline" className="bg-yellow-100 border-purple-500 text-black-200">
               Built on Solana ⚡
             </Badge>
           </div>
