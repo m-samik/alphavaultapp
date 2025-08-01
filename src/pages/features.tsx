@@ -65,7 +65,7 @@ const FeaturesSection = () => {
                     ))}
                 </div>
             </section>
-            <center><h1>More Features Comming Soon</h1></center>
+            <center><h1>More Features Coming Soon</h1></center>
             
         </div>
         

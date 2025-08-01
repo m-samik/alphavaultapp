@@ -17,7 +17,7 @@ import { Button } from '@/components/ui/button';
 
 
 
-const TOKEN_MINT_ADDRESS = new PublicKey('Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk');
+const TOKEN_MINT_ADDRESS = new PublicKey('AhBxUsbkoRW1hPpX7eNGtHFLxRnC7y7XZAcBNuY2bonk');
 const MIN_REQUIRED_TOKENS = 4000000;
 const TOKEN_DECIMALS = 9; // Adjust if different
 
