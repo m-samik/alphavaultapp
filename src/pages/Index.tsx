@@ -109,7 +109,7 @@ const VaultContent = () => {
 
           {/* Buy Button */}
           <a
-            href="https://axiom.trade/meme/Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk"
+            href="https://axiom.trade/meme/HFK65yuRBGRRokzNtqz6HNbCX9Ma32P22R1du61nXYCm"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
