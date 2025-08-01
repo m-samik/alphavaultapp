@@ -17,7 +17,7 @@ import { Button } from '@/components/ui/button';
 
 
 
-const TOKEN_MINT_ADDRESS = new PublicKey('AhBxUsbkoRW1hPpX7eNGtHFLxRnC7y7XZAcBNuY2bonk');
+const TOKEN_MINT_ADDRESS = new PublicKey('Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk');
 const MIN_REQUIRED_TOKENS = 100000;
 const TOKEN_DECIMALS = 9; // Adjust if different
 
@@ -104,12 +104,12 @@ const VaultContent = () => {
           <p className="text-vault-gray-light text-sm sm:text-base font-mono leading-relaxed animate-fade-in-up">
             This app is exclusively available to <span className="font-bold">$AV</span> holders.
             <br className="hidden sm:block" />
-            To unlock full functionality, you must hold at least <strong>100000 $AV</strong> tokens.
+            To unlock full functionality, you must hold at least <strong>4M $AV</strong> tokens.
           </p>
 
           {/* Buy Button */}
           <a
-            href="https://axiom.trade/meme/HFK65yuRBGRRokzNtqz6HNbCX9Ma32P22R1du61nXYCm"
+            href="https://axiom.trade/meme/Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
