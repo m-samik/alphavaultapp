@@ -104,7 +104,7 @@ const VaultContent = () => {
           <p className="text-vault-gray-light text-sm sm:text-base font-mono leading-relaxed animate-fade-in-up">
             This app is exclusively available to <span className="font-bold">$AV</span> holders.
             <br className="hidden sm:block" />
-            To unlock full functionality, you must hold at least <strong>4M $AV</strong> tokens.
+            To unlock full functionality, you must hold at least <strong>100000 $AV</strong> tokens.
           </p>
 
           {/* Buy Button */}
