@@ -66,7 +66,9 @@ const FeaturesSection = () => {
                 </div>
             </section>
             <center><h1>More Features Comming Soon</h1></center>
+            
         </div>
+        
         
     );
 };

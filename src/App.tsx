@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Features from "./pages/features";
 import Security from "./pages/security";
+
 import { WalletProviderWrapper } from '@/components/WalletProvider';
 
 
@@ -18,17 +19,17 @@ const App = () => (
       <Toaster />
       <Sonner />
       <WalletProviderWrapper>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/security" element={<Security />} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/security" element={<Security />} />
 
 
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
       </WalletProviderWrapper>
     </TooltipProvider>
   </QueryClientProvider>

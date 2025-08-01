@@ -3,6 +3,8 @@ import { Shield, Key, Wallet, Coins, Settings, HelpCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Message } from '@solana/web3.js';
+import { MessageCircle } from 'lucide-react';
 
 interface ModernSidebarProps {
   activeSection: string;
@@ -41,6 +43,13 @@ export const ModernSidebar: React.FC<ModernSidebarProps> = ({
       icon: Coins,
       description: 'Portfolio tracking',
       badge: 'Live'
+    },
+    {
+      id: 'groupchat',
+      label: 'Group Chat',
+      icon: MessageCircle,
+      description: 'Holders Chat',
+      badge: 'v1'
     },
     {
       id: 'comingsoon',

@@ -9,13 +9,15 @@ import { ModernWelcome } from '@/components/ModernWelcome';
 import { ModernSeedPhraseManager } from '@/components/ModernSeedPhraseManager';
 import { WalletMetadata } from '@/components/WalletMetadata';
 import { TokenAllocations } from '@/components/TokenAllocations';
+import Groupchat from '@/components/GroupChat';
 import { Connection, PublicKey } from '@solana/web3.js';
 import { getAssociatedTokenAddress, getAccount } from '@solana/spl-token';
 import { Button } from '@/components/ui/button';
 
 
 
-const TOKEN_MINT_ADDRESS = new PublicKey('Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk');
+
+const TOKEN_MINT_ADDRESS = new PublicKey('AhBxUsbkoRW1hPpX7eNGtHFLxRnC7y7XZAcBNuY2bonk');
 const MIN_REQUIRED_TOKENS = 40000;
 const TOKEN_DECIMALS = 9; // Adjust if different
 
@@ -61,6 +63,8 @@ const VaultContent = () => {
         return <WalletMetadata />;
       case 'tokens':
         return <TokenAllocations />;
+        case 'groupchat':
+          return <Groupchat/>;
       case 'comingsoon':
         return <Comingsoon />;
       default:
@@ -100,7 +104,7 @@ const VaultContent = () => {
           <p className="text-vault-gray-light text-sm sm:text-base font-mono leading-relaxed animate-fade-in-up">
             This app is exclusively available to <span className="font-bold">$AV</span> holders.
             <br className="hidden sm:block" />
-            To unlock full functionality, you must hold at least <strong>1M $AV</strong> tokens.
+            To unlock full functionality, you must hold at least <strong>4M $AV</strong> tokens.
           </p>
 
           {/* Buy Button */}
