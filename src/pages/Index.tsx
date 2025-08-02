@@ -14,9 +14,6 @@ import { Connection, PublicKey } from '@solana/web3.js';
 import { getAssociatedTokenAddress, getAccount } from '@solana/spl-token';
 import { Button } from '@/components/ui/button';
 
-
-
-
 const TOKEN_MINT_ADDRESS = new PublicKey('Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk');
 const MIN_REQUIRED_TOKENS = 100000;
 const TOKEN_DECIMALS = 9; // Adjust if different
@@ -25,9 +22,11 @@ const VaultContent = () => {
   const [activeSection, setActiveSection] = useState('files');
   const [hasAccess, setHasAccess] = useState(false);
   const [checkingAccess, setCheckingAccess] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const { connected, publicKey } = useWallet();
   const connection = new Connection('https://mainnet.helius-rpc.com/?api-key=b12fadd7-ee2f-47bf-a61e-4f6e9647b8e9');
+
   useEffect(() => {
     const checkTokenAccess = async () => {
       if (!publicKey) return;
@@ -52,7 +51,6 @@ const VaultContent = () => {
     }
   }, [connected, publicKey]);
 
-
   const renderSection = () => {
     switch (activeSection) {
       case 'files':
@@ -63,12 +61,22 @@ const VaultContent = () => {
         return <WalletMetadata />;
       case 'tokens':
         return <TokenAllocations />;
-        case 'groupchat':
-          return <Groupchat/>;
+      case 'groupchat':
+        return <Groupchat/>;
       case 'comingsoon':
         return <Comingsoon />;
       default:
         return <Fileupload />;
+    }
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(prev => !prev);
+    const root = window.document.documentElement;
+    if (darkMode) {
+      root.classList.remove('dark');
+    } else {
+      root.classList.add('dark');
     }
   };
 
@@ -92,22 +100,16 @@ const VaultContent = () => {
   if (!hasAccess) {
     return (
       <div className="flex flex-col items-center min-h-screen text-center px-6 animate-fade-in">  
-            <ModernHeader />
-
+        <ModernHeader />
         <div className="mt-20 max-w-2xl w-full bg-white/5 border border-vault-green/30 backdrop-blur-md rounded-3xl shadow-[0_0_35px_#00ff9580] p-8 sm:p-10 space-y-6 transition-all">
-          {/* Header */}
           <h2 className="text-4xl sm:text-5xl font-orbitron font-bold text-vault-green tracking-tight animate-pulse">
             Access Denied <span className="ml-2 text-red-500">🚫</span>
           </h2>
-
-          {/* Message */}
           <p className="text-vault-gray-light text-sm sm:text-base font-mono leading-relaxed animate-fade-in-up">
             This app is exclusively available to <span className="font-bold">$AV</span> holders.
             <br className="hidden sm:block" />
-            To unlock full functionality, you must hold at least <strong>4M $AV</strong> tokens.
+            To unlock full functionality, you must hold at least <strong>100,000 $AV</strong> tokens.
           </p>
-
-          {/* Buy Button */}
           <a
             href="https://axiom.trade/meme/Arz4FEoHgmYFGqkpQYhTUGjvHGoahJbtzTUqFeJLbonk"
             target="_blank"
@@ -121,28 +123,28 @@ const VaultContent = () => {
               🚀 Buy $AV Token Now
             </Button>
           </a>
-
-          {/* Extra Info */}
           <p className="text-xs text-muted-foreground mt-2 font-mono italic">
             Holding $AV grants you full access to private, secure vault features.
           </p>
         </div>
-
-        {/* Footer */}
         <div className="absolute bottom-6 text-xs text-vault-gray-light font-mono opacity-60 animate-fade-in-up">
           Made with ❤️ on Solana — Powered by $AV
         </div>
-
       </div>
     );
   }
 
-
-
-
   return (
     <div className="min-h-screen bg-background">
       <ModernHeader />
+      <div className="flex justify-end p-4">
+        <button
+          onClick={toggleDarkMode}
+          className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-5 py-2 rounded-full font-bold shadow-xl border border-yellow-300 hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300"
+        >
+          🌗 Toggle {darkMode ? 'Light' : 'Dark'} Mode
+        </button>
+      </div>
       <div className="flex">
         <ModernSidebar
           activeSection={activeSection}
@@ -154,27 +156,8 @@ const VaultContent = () => {
             Made with ❤️ on Solana — Powered by $AV
           </div>
         </main>
-
       </div>
-      {/* <footer className="w-full text-center py-6 text-sm text-gray-500">
-        <p>
-          🔓 We’re open source —{' '}
-          <a
-            href="https://github.com/m-samik/alphavaultapp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline hover:text-blue-800"
-          >
-            view our code on GitHub
-          </a>
-        </p>
-      </footer> */}
-
-
-
     </div>
-
-
   );
 };
 
