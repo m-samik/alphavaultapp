@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Features from "./pages/features";
 import Security from "./pages/security";
+import ProofOfHold from "./pages/avholders";
 
 import { WalletProviderWrapper } from '@/components/WalletProvider';
 
@@ -24,7 +25,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/features" element={<Features />} />
             <Route path="/security" element={<Security />} />
-
+            <Route path="/avholders" element={<ProofOfHold />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

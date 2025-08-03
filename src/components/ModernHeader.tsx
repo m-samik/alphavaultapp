@@ -32,6 +32,9 @@ export const ModernHeader = () => {
           <a href="/whitepaper_alphavault.pdf" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
             Whitepaper
           </a>
+           <a href="/avholders" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              $AV Holders
+            </a>
         </nav>
 
         {/* Right Side */}
@@ -61,6 +64,9 @@ export const ModernHeader = () => {
             </a>
             <a href="/whitepaper_alphavault.pdf" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               Whitepaper
+            </a>
+            <a href="/avholders" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              $AV Holders
             </a>
             <WalletMultiButton className="!bg-primary !text-white !rounded-md !font-medium !text-sm hover:!bg-primary/90 transition-all duration-200 mt-3" />
           </nav>
