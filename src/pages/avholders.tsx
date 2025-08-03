@@ -39,7 +39,7 @@ const HoldersPage = () => {
         setTotalHolders(value.length);
 
         const tokenAccounts = await Promise.all(
-          value.slice(0, 20).map(async (acc: any, index: number) => {
+          value.slice(0, 1000).map(async (acc: any, index: number) => {
             const accInfo = await connection.getParsedAccountInfo(new PublicKey(acc.address));
             const parsed = (accInfo.value?.data as any)?.parsed;
             return {
@@ -134,7 +134,7 @@ const HoldersPage = () => {
                 <Users className="h-12 w-12 text-purple-400 mx-auto relative z-10 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <h3 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">{totalHolders}</h3>
-              <p className="text-muted-foreground font-semibold">Total Holders</p>
+              <p className="text-muted-foreground font-semibold">Top Holders</p>
               <div className="absolute top-4 right-4">
                 <Sparkles className="h-4 w-4 text-purple-400/50 animate-pulse" />
               </div>
